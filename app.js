@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const connectDB = require("./db/connect");
 require("dotenv").config();
+const categories = require("./routes/categories.js");
+const restaurants = require("./routes/restaurants.js");
 
 // middleware
 
@@ -9,7 +11,7 @@ app.use(express.json());
 
 // routes
 
-// app.use("/api/v1/tasks", tasks);
+app.use("/api/v1/", [categories, restaurants]);
 
 const port = process.env.PORT || 5000;
 
