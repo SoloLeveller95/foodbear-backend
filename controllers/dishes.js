@@ -1,8 +1,9 @@
 const Dish = require("../models/Dish.js");
 
 const getAllDishes = async (req, res) => {
+	const limit = Number(req.query.limit) || 3;
 	try {
-		const dishes = await Dish.find({}).limit(3);
+		const dishes = await Dish.find({}).limit(limit);
 		res.status(200).json(dishes);
 	} catch (error) {
 		res.status(500).json({ msg: error });
