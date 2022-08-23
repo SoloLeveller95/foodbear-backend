@@ -1,6 +1,6 @@
 # Introduction
 
-This code project serves as the backend for foodbear project. The code consists of ExpressJS app and connect with MongoDB Atlas. You can try this available endoints in Postman in order to get the informations that we need.
+This code project serves as the backend for foodbear project. The code consists of ExpressJS app and connect with MongoDB Atlas. You can try this available endpoints in Postman in order to get the informations that we need. Please run npm run start first before fetching the data.
 
 Get all categories = http://localhost:3001/api/v1/categories
 Get all featureds = http://localhost:3001/api/v1/featureds
