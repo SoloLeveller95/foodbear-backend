@@ -27,6 +27,19 @@ const createOrders = async (req, res) => {
 	}
 };
 
+const deleteOrders = async (req, res) => {
+	try {
+		const { _id: orderID } = req.params;
+		const orders = await Order.findOneAndDelete({ _id: orderID });
+		if (!orders) {
+			return res.status(404).json({ msg: `No task with id : ${taskID}` });
+		}
+		res.status(200).json({ status: "success", orders });
+	} catch (error) {
+		res.status(500).json({ msg: error });
+	}
+};
+
 // const getRestaurantByFeatured = async (req, res) => {
 // 	try {
 // 		const { type: typeID } = req.params;
@@ -46,4 +59,5 @@ const createOrders = async (req, res) => {
 module.exports = {
 	getAllOrders,
 	createOrders,
+	deleteOrders,
 };
