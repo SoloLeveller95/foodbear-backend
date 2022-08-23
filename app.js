@@ -6,6 +6,7 @@ const categories = require("./routes/categories.js");
 const restaurants = require("./routes/restaurants.js");
 const featureds = require("./routes/featureds.js");
 const dishes = require("./routes/dishes.js");
+const orders = require("./routes/orders.js");
 var cors = require("cors");
 
 // middleware
@@ -15,7 +16,7 @@ app.use(cors({ origin: true, credentials: true }));
 
 // routes
 
-app.use("/api/v1/", [categories, restaurants, featureds, dishes]);
+app.use("/api/v1/", [categories, restaurants, featureds, dishes, orders]);
 
 const port = process.env.PORT || 5000;
 
