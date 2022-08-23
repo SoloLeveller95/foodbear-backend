@@ -4,14 +4,18 @@ const connectDB = require("./db/connect");
 require("dotenv").config();
 const categories = require("./routes/categories.js");
 const restaurants = require("./routes/restaurants.js");
+const featureds = require("./routes/featureds.js");
+const dishes = require("./routes/dishes.js");
+var cors = require("cors");
 
 // middleware
 
 app.use(express.json());
+app.use(cors({ origin: true, credentials: true }));
 
 // routes
 
-app.use("/api/v1/", [categories, restaurants]);
+app.use("/api/v1/", [categories, restaurants, featureds, dishes]);
 
 const port = process.env.PORT || 5000;
 
